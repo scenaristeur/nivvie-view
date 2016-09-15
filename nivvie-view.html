@@ -2,248 +2,282 @@
 <link rel="import" href="../paper-button/paper-button.html">
 
 <!--
-`nivvie-view`
-
-
-@demo demo/index.html 
+	`nivvie-view`
+	
+	
+	@demo demo/index.html 
 -->
 
 <dom-module id="nivvie-view">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
-			<select id="mySelectPeriod">
-		<option value="2015" selected="true">2015</option>
-		<option value="2014">2014</option>
-		<option value="2013">2013</option>
-		<option value="2012">2012</option>
-		<option value="2011" >2011</option>
-	</select>
-	
-				<select id="mySelectTest">
-		<option value="">Familles Test</option>
-		<option value="2">couple 1.5SMIC, deux enfants</option>
-		<option value="1">couple 4 enfants</option>
+	<template>
+		<style>
+			:host {
+			display: block;
+			}
+		</style>
+		<h2>Hello [[prop1]]</h2>
+		<select id="mySelectPeriod">
+			<option value="2015" selected="true">2015</option>
+			<option value="2014">2014</option>
+			<option value="2013">2013</option>
+			<option value="2012">2012</option>
+			<option value="2011" >2011</option>
 		</select>
-	
-	
-	  <div id='paramDiv'></div>
-	<h2>Logement</h2>
-	<input type="text" id="loyerAvantInput" name="loyerAvantInput" value="" placeHolder="Loyer Annuel Avant Séparation" />
-	<select id="occupationAvant">
-		<option value="0">Non renseigné</option>
-		<option value="1">Accédant à la propriété</option>
-		<option value="2">Propriétaire (non accédant) du logement</option>
-		<option value="3">Locataire d'un logement HLM</option>
-		<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
-		<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
-		<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
-		<option value="7">Locataire d'un foyer</option>
-		<option value="8">Sans domicile stable</option>
-	</select>
-    <h2>Parents</h2>
-    <div id="sectionParents">
-	<div id="pere">
-    <input type="text" id="pereName" name="pereName" value="" placeHolder="Prenom du père" />
-    <input type="text" id="pereSalaire" name="pereSalaire" value="" placeholder="Revenu annuel du pere en €" size='40' />
-	 <input type="text" id="pereNaissance" name="pereNaissance" id="pereNaissance" value="" placeholder="Date Naissance 1980-01-01" />
-	 <input type="text" id="loyerPereInput" name="loyerPereInput" value="" placeHolder="Loyer Annuel Pere Après" />
-	 	<select id="occupationPere">
-		<option value="0">Non renseigné</option>
-		<option value="1">Accédant à la propriété</option>
-		<option value="2">Propriétaire (non accédant) du logement</option>
-		<option value="3">Locataire d'un logement HLM</option>
-		<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
-		<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
-		<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
-		<option value="7">Locataire d'un foyer</option>
-		<option value="8">Sans domicile stable</option>
-	</select>
-	 </div>
-	 <div id="mere">
-	 <input type="text" id="mereName" name="mereName" value="" placeholder="Prénom de la mère" />
-    <input type="text" id="mereSalaire" name="mereSalaire" value="" placeholder="Revenu annuel de la mère en €" size='40' />
-	 <input type="text" id="mereNaissance" name="mereNaissance" id="mereNaissance" value="" placeholder="Date Naissance 1980-01-01"/>
-	 <input type="text" id="loyerMereInput" name="loyerMereInput" value="" placeHolder="Loyer Annuel Mère Après" />
-	 	<select id="occupationMere">
-		<option value="0">Non renseigné</option>
-		<option value="1">Accédant à la propriété</option>
-		<option value="2">Propriétaire (non accédant) du logement</option>
-		<option value="3">Locataire d'un logement HLM</option>
-		<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
-		<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
-		<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
-		<option value="7">Locataire d'un foyer</option>
-		<option value="8">Sans domicile stable</option>
-	</select>
-	</div>
-  <!-- <input type="button" value="x" style="width: 26px" /><br /> -->
-</div>
-  
-  <h2>Enfants</h2>
-  <div id="section0" class ="sectionEnfant">
-    <input type="text" name="prenomEnfant" value="" placeholder="Prénom" />
-    <input type="text" name="dateNaissanceEnfant" id="dateNaissanceEnfant" value="" placeholder="date de naissance" size='40' />
-    <input type="button" value="x" style="width: 26px" /><br />
-</div>
-<a href="#" onclick="addSection(this)">Ajouter un enfant</a><br />
-<h4>&nbsp;</h4>
-<!--<input type="button" value="Comparer" style="width: 260px" onclick="simulation1()"/><br />-->
-	<paper-button 
+		
+		<select id="mySelectTest">
+			<option value="">Familles Test</option>
+			<option value="2" selected="true">couple 1.5SMIC, deux enfants</option>
+			<option value="1">couple 4 enfants</option>
+		</select>
+		
+		
+		<div id='paramDiv'></div>
+		<h2>Logement</h2>
+		<input type="text" id="loyerAvantInput" name="loyerAvantInput" value="" placeHolder="Loyer Annuel Avant Séparation" />
+		<select id="occupationAvant">
+			<option value="0">Non renseigné</option>
+			<option value="1">Accédant à la propriété</option>
+			<option value="2">Propriétaire (non accédant) du logement</option>
+			<option value="3">Locataire d'un logement HLM</option>
+			<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
+			<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
+			<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
+			<option value="7">Locataire d'un foyer</option>
+			<option value="8">Sans domicile stable</option>
+		</select>
+		<h2>Parents</h2>
+		<div id="sectionParents">
+			<div id="pere">
+				<input type="text" id="pereName" name="pereName" value="" placeHolder="Prenom du père" />
+				<input type="text" id="pereSalaire" name="pereSalaire" value="" placeholder="Revenu annuel du pere en €" size='40' />
+				<input type="text" id="pereNaissance" name="pereNaissance" id="pereNaissance" value="" placeholder="Date Naissance 1980-01-01" />
+				<input type="text" id="loyerPereInput" name="loyerPereInput" value="" placeHolder="Loyer Annuel Pere Après" />
+				<select id="occupationPere">
+					<option value="0">Non renseigné</option>
+					<option value="1">Accédant à la propriété</option>
+					<option value="2">Propriétaire (non accédant) du logement</option>
+					<option value="3">Locataire d'un logement HLM</option>
+					<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
+					<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
+					<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
+					<option value="7">Locataire d'un foyer</option>
+					<option value="8">Sans domicile stable</option>
+				</select>
+			</div>
+			<div id="mere">
+				<input type="text" id="mereName" name="mereName" value="" placeholder="Prénom de la mère" />
+				<input type="text" id="mereSalaire" name="mereSalaire" value="" placeholder="Revenu annuel de la mère en €" size='40' />
+				<input type="text" id="mereNaissance" name="mereNaissance" id="mereNaissance" value="" placeholder="Date Naissance 1980-01-01"/>
+				<input type="text" id="loyerMereInput" name="loyerMereInput" value="" placeHolder="Loyer Annuel Mère Après" />
+				<select id="occupationMere">
+					<option value="0">Non renseigné</option>
+					<option value="1">Accédant à la propriété</option>
+					<option value="2">Propriétaire (non accédant) du logement</option>
+					<option value="3">Locataire d'un logement HLM</option>
+					<option value="4" selected="true">Locataire ou sous-locataire d'un logement loué vide non-HLM</option>
+					<option value="5">Locataire ou sous-locataire d'un logement loué meublé ou d'une chambre d'hôtel</option>
+					<option value="6">Logé gratuitement par des parents, des amis ou l'employeur</option>
+					<option value="7">Locataire d'un foyer</option>
+					<option value="8">Sans domicile stable</option>
+				</select>
+			</div>
+			<!-- <input type="button" value="x" style="width: 26px" /><br /> -->
+		</div>
+		
+		<h2>Enfants</h2>
+		<div id="section0" class ="sectionEnfant">
+			<input type="text" name="prenomEnfant" value="" placeholder="Prénom" />
+			<input type="text" name="dateNaissanceEnfant" id="dateNaissanceEnfant" value="" placeholder="date de naissance" size='40' />
+			<input type="button" value="x" style="width: 26px" /><br />
+		</div>
+		<a href="#" onclick="addSection(this,this.$.section0)">Ajouter un enfant</a><br />
+		<h4>&nbsp;</h4>
+		<!--<input type="button" value="Comparer" style="width: 260px" onclick="simulation1()"/><br />-->
+		<paper-button 
 		raised
 		on-tap="simulation1">
 			<iron-icon icon="queue"></iron-icon> <!-- ne s'affiche pas ? -->
 			Comparer
 		</paper-button>
-
-    <div id="result">Pour une démo, selectionnez une 'Famille test' et cliquez sur "Comparer"</div>
-  </template>
-<script type="text/javascript" charset="UTF-8" src="ui.js"></script>
-
-  <script>
-    Polymer({
-
-      is: 'nivvie-view',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'nivvie-view',
-        },
-      },
-	  ready: function(){
-		  	var paramDiv=this.$.paramDiv;
-
-	
-	
-
-	
-		  },
-		  
-		  
-		  simulation1:function(){
-var test=false;
-var numtest="";
-var mySelectTest=this.$.mySelectTest.value;
-if (mySelectTest!=""){
-	test=true;
-	numtest=mySelectTest;
-}else {
-	test=false;
-	}
-occupAvant=this.$.occupationAvant.value;
-occupPere=this.$.occupationPere.value;
-occupMere=this.$.occupationMere.value;
-
-console.log(occupAvant+" "+occupPere+" "+occupMere);
-	
-period=this.$.mySelectPeriod.value;
-this.$.result.innerHTML="Traitement des informations";
-	var situation={};
-	var main = this.$.section0;
-	var cntr = (main.datacntr || 0); 
-	var nbEnfants=cntr+1;
-	console.log(nbEnfants +" enfants");
-	
-	var pereName = this.$.pereName.value;
-	var pereSalaire = this.$.pereSalaire.value;
-	var pereNaissance = this.$.pereNaissance.value;
-	var mereName = this.$.mereName.value;
-	var mereSalaire = this.$.mereSalaire.value;
-	var mereNaissance = this.$.mereNaissance.value;
-	
-	var loyerAvant = this.$.loyerAvantInput.value;
-	var loyerMere = this.$.loyerMereInput.value;
-	var loyerPere = this.$.loyerPereInput.value;
-	
-	var sectionEnfants=this.querySelectorAll("sectionEnfant");
-	
-	if (pereName==""){
-			test=true;
-	}
-	if (numtest==1){
-		console.log("test1");
-		pereName='pereTest';
-		pereSalaire='24000';
-		pereNaissance='1977-05-14';
-		mereName='mereTest';
-		mereSalaire='24000';
-		mereNaissance='1978-10-11';
-		loyerAvant='8160';
-		loyerMere='8160';
-		loyerPere='6360';
-	}else if (numtest==2){
-		console.log("test2");
-		pereName='pereTest';
-		pereSalaire='23884.378';
-		pereNaissance='1977-05-14';
-		mereName='mereTest';
-		mereSalaire='23884.378';
-		mereNaissance='1978-10-11';
-		loyerAvant='12614';
-		loyerMere='8963';
-		loyerPere='4977';
-	
-	}
-	
 		
-	console.log(pereName+" "+pereSalaire+" "+pereNaissance+" "+mereName+" "+mereSalaire+" "+mereNaissance);
-	console.log(sectionEnfants);
-	
-	var pere = new Individu(pereName,pereNaissance,pereSalaire);
-	situation['pere'] = pere;
-	var mere = new Individu(mereName,mereNaissance,mereSalaire);
-	situation['mere'] = mere;
-	
-var enfants=[];
-	
-	var sectionEnfantslength = sectionEnfants.length;
-	for (var i = 0; i < sectionEnfantslength; i++) {
-		var sectionEnfant=sectionEnfants[i];
-		var prenomEnfant=sectionEnfant.children[0].value;
-		var dateNaissanceEnfant=sectionEnfant.children[1].value;
-		console.log(prenomEnfant +" "+dateNaissanceEnfant);
-		var enfant=new Individu(prenomEnfant,dateNaissanceEnfant,0);
-		enfants.push(enfant);
-	}
-	
-	if (test){
-		enfants=[];
-			if (numtest==1){
-		var enfant=new Individu('Enfant1','2000-08-23',0);
-		enfants.push(enfant);
-				var enfant=new Individu('Enfant2','2004-07-02',0);
-		enfants.push(enfant);
-				var enfant=new Individu('Enfant3','2007-02-08',0);
-		enfants.push(enfant);
-				var enfant=new Individu('Enfant4','2011-01-27',0);
-		enfants.push(enfant);
-			}else
-				if (numtest==2){
-				var enfant=new Individu('Enfant1','2011-08-23',0);
-		enfants.push(enfant);
-				var enfant=new Individu('Enfant2','2011-07-02',0);
-		enfants.push(enfant);
-			}
-	}
-	situation['enfants'] = enfants;
-	situation['loyerAvant']=loyerAvant;
-	situation['loyerMere']=loyerMere;
-	situation['loyerPere']=loyerPere;
-
-	console.log(situation);
-	var calcul=new Calcul(situation);
-	calcul.execute();
-
-	
-}
-		  
-		  
-
+		<div id="result">Pour une démo, selectionnez une 'Famille test' et cliquez sur "Comparer"</div>
+	</template>
+	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="ui.js"></script>
+	  <script>
+  $(function() {
+    $( "#dateNaissanceEnfant" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  dateFormat:'yy-mm-dd',
+	   yearRange: "-80:+0",
+	  showAnim: "bounce"
     });
+ 
+      $( "#pereNaissance" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  dateFormat:'yy-mm-dd',
+	   yearRange: "-80:+0",
+	  showAnim: "bounce"
+    });
+	
+	  $( "#mereNaissance" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+	  dateFormat:'yy-mm-dd',
+	   yearRange: "-80:+0",
+	  showAnim: "bounce"
+    });
+	
+	$.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+  });
   </script>
+	
+	<script>
+		Polymer({
+			
+			is: 'nivvie-view',
+			
+			properties: {
+				prop1: {
+					type: String,
+					value: 'nivvie-view',
+				},
+			},
+			ready: function(){
+				var paramDiv=this.$.paramDiv;
+				
+				
+				
+				
+				
+			},
+			
+			
+			simulation1:function(){
+				var test=false;
+				var numtest="";
+				var mySelectTest=this.$.mySelectTest.value;
+				if (mySelectTest!=""){
+					test=true;
+					numtest=mySelectTest;
+					}else {
+					test=false;
+				}
+				occupAvant=this.$.occupationAvant.value;
+				occupPere=this.$.occupationPere.value;
+				occupMere=this.$.occupationMere.value;
+				
+				console.log(occupAvant+" "+occupPere+" "+occupMere);
+				
+				period=this.$.mySelectPeriod.value;
+				this.$.result.innerHTML="Traitement des informations";
+				var situation={};
+				var main = this.$.section0;
+				var cntr = (main.datacntr || 0); 
+				var nbEnfants=cntr+1;
+				console.log(nbEnfants +" enfants");
+				
+				var pereName = this.$.pereName.value;
+				var pereSalaire = this.$.pereSalaire.value;
+				var pereNaissance = this.$.pereNaissance.value;
+				var mereName = this.$.mereName.value;
+				var mereSalaire = this.$.mereSalaire.value;
+				var mereNaissance = this.$.mereNaissance.value;
+				
+				var loyerAvant = this.$.loyerAvantInput.value;
+				var loyerMere = this.$.loyerMereInput.value;
+				var loyerPere = this.$.loyerPereInput.value;
+				
+				var sectionEnfants=this.querySelectorAll("sectionEnfant");
+				
+				if (pereName==""){
+					test=true;
+				}
+				if (numtest==1){
+					console.log("test1");
+					pereName='pereTest';
+					pereSalaire='24000';
+					pereNaissance='1977-05-14';
+					mereName='mereTest';
+					mereSalaire='24000';
+					mereNaissance='1978-10-11';
+					loyerAvant='8160';
+					loyerMere='8160';
+					loyerPere='6360';
+					}else if (numtest==2){
+					console.log("test2");
+					pereName='pereTest';
+					pereSalaire='23884.378';
+					pereNaissance='1977-05-14';
+					mereName='mereTest';
+					mereSalaire='23884.378';
+					mereNaissance='1978-10-11';
+					loyerAvant='12614';
+					loyerMere='8963';
+					loyerPere='4977';
+					
+				}
+				
+				
+				console.log(pereName+" "+pereSalaire+" "+pereNaissance+" "+mereName+" "+mereSalaire+" "+mereNaissance);
+				console.log(sectionEnfants);
+				
+				var pere = new Individu(pereName,pereNaissance,pereSalaire);
+				situation['pere'] = pere;
+				var mere = new Individu(mereName,mereNaissance,mereSalaire);
+				situation['mere'] = mere;
+				
+				var enfants=[];
+				
+				var sectionEnfantslength = sectionEnfants.length;
+				for (var i = 0; i < sectionEnfantslength; i++) {
+					var sectionEnfant=sectionEnfants[i];
+					var prenomEnfant=sectionEnfant.children[0].value;
+					var dateNaissanceEnfant=sectionEnfant.children[1].value;
+					console.log(prenomEnfant +" "+dateNaissanceEnfant);
+					var enfant=new Individu(prenomEnfant,dateNaissanceEnfant,0);
+					enfants.push(enfant);
+				}
+				
+				if (test){
+					enfants=[];
+					if (numtest==1){
+						var enfant=new Individu('Enfant1','2000-08-23',0);
+						enfants.push(enfant);
+						var enfant=new Individu('Enfant2','2004-07-02',0);
+						enfants.push(enfant);
+						var enfant=new Individu('Enfant3','2007-02-08',0);
+						enfants.push(enfant);
+						var enfant=new Individu('Enfant4','2011-01-27',0);
+						enfants.push(enfant);
+					}else
+					if (numtest==2){
+						var enfant=new Individu('Enfant1','2011-08-23',0);
+						enfants.push(enfant);
+						var enfant=new Individu('Enfant2','2011-07-02',0);
+						enfants.push(enfant);
+					}
+				}
+				situation['enfants'] = enfants;
+				situation['loyerAvant']=loyerAvant;
+				situation['loyerMere']=loyerMere;
+				situation['loyerPere']=loyerPere;
+				
+				console.log(situation);
+				console.log(this.$.result);
+				var calcul=new Calcul(situation,this.$.result);
+				calcul.execute();
+				
+				
+			}
+
+			
+			
+			
+		});
+	</script>
 </dom-module>
